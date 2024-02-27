@@ -9,3 +9,5 @@ click `resize instance`
 click `Select a New Flavor` under "New Flavor" 
 
 click `resize`
+
+click `Confirm Resize/Imigrate`
