@@ -9,6 +9,6 @@
 ![image](https://github.com/Alex0424/OpenStack/assets/33380655/5136166e-e3c9-46ef-ab88-f13d673b3514)
 ![image](https://github.com/Alex0424/OpenStack/assets/33380655/1696545e-f573-4ad0-9de5-24aa3195f0d4)
 
-disassociate the floating ip to the 2 instances and add an associate floating ip to the newly created load balancer:
+disassociate floating ip from the 2 instances and associate floating ip to the newly created load balancer:
 
 ![image](https://github.com/Alex0424/OpenStack/assets/33380655/3f8f3dea-fd7b-4648-bdd1-72a204a990e4)
