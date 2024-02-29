@@ -1,4 +1,4 @@
-# How to change flavor
+# How to change flavor without changing making new instance
 
 you might need to edit security groups by removing some groups e.g. http for the resize process to work
 
