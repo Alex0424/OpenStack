@@ -35,7 +35,7 @@ chmod 600 name_key.pem (Read and write only for owner for security and the key t
   - Network Address `x.x.x.0/24` (instead of x use a number between 0 and 255`)
   - IP Version `IPv4`
 - Subnet Details
-  - Allocation Pools `x.x.x.2,x.x.x.254` (this means 255 devices can be connectet to the subnet)
+  - Allocation Pools `x.x.x.2,x.x.x.254` (this means 253 devices can be connectet to the subnet)
   - DNS Name Servers `8.8.8.8,8.8.4.4`
 
 ### Router
