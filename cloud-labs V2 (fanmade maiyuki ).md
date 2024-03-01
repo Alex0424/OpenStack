@@ -1,4 +1,4 @@
-# Hello
+# Setup Infrastructure
 
 ### Create Key Pair
 
@@ -14,7 +14,7 @@ Click `Copy Private Key to Clipboard`
 
 Open text-editor on your computer and paste the full private key and save. 
 
-Open your terminal and store the key in hidden .ssh file:
+Open your linux terminal and store the key in hidden .ssh file:
 
 ```
 cd path/to/.ssh
