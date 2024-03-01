@@ -94,3 +94,5 @@ chmod 600 name_key.pem (Read and write only for owner for security and the key t
 
 - in linux terminal: `ssh -i path/to/.ssh/name_key.pem root@your_ip`
 
+![image](https://github.com/Alex0424/OpenStack/assets/33380655/6415db54-b7d6-4293-9625-d1efdbbcd607)
+
