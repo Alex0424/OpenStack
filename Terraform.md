@@ -7,11 +7,12 @@ unzip your_terraform_version.zip
 sudo chown root:root terraform
 sudo mv terraform /usr/local/bin/
 ```
-### Create Directory and file
+### Create Directory And Terraform File
 ```
 mkdir terraform-directory & cd terraform-directory
 vim example.tf
 ```
+### Configure Terraform File
 ```
 terraform {
   required_providers {
@@ -41,6 +42,7 @@ resource "openstack_compute_instance_v2" "test-server" {
   }
 }
 ```
+### Launch Instance with Terraform
 ```
 terraform init
 terraform plan
