@@ -1,4 +1,4 @@
-# Create Instance With Terraform
+# Create an Simple Instance With Terraform
 
 ### Download Terraform on linux terminal
 visit https://developer.hashicorp.com/terraform/install?product_intent=terraform#linux
@@ -14,32 +14,59 @@ vim example.tf
 ```
 ### Configure Terraform File
 ```
+# Select openstack as our provider
 terraform {
   required_providers {
     openstack = {
-      source = "terraform-provider-openstack/openstack"
+      source  = "terraform-provider-openstack/openstack"
     }
   }
 }
-
+# Configure the openstack provider
 provider "openstack" {
-  user_name = "your_openstack_username"
-  tenant_name = "your_opensack_project_name"
-  password = "your_openstack_password"
-  auth_url = "your_openstack_Authentication_URL"
-  insecure = true
+  user_name   = var.openstack_username
+  tenant_name = var.openstack_project
+  password    = var.openstack_user_password
+  auth_url    = var.openstack_auth_url
+  insecure    = true
 }
-
+#Configure the compute instance
 resource "openstack_compute_instance_v2" "test-server" {
-  name = "test-server"
-  image_id = "c861958a-0ec5-4b43-b337-7b85314c63c9"
-  flavor_name = "a1-ram2-disk80-perf1"
-  key_pair = "alex-ssh"
+  name            = "instance_name"
+  image_id        = "your_image_id"
+  flavor_name     = "your_instance"
+  key_pair        = "yur_pair_name"
   security_groups = ["default"]
 
   network {
-    name = "ext-net1"
+    name = "your external network"
   }
+}
+```
+```
+variable "administrator_ip" {
+  type = string
+  default = "0,0,0,0/0"
+}
+
+variable "openstack_auth_url" {
+  type = string
+  default = "your_auth_url"
+}
+
+variable "openstack_project" {
+  type = string
+  default = "your_project_name"
+}
+
+variable "openstack_username" {
+  type = string
+  default = "your_username"
+}
+
+variable "openstack_user_password" {
+  type = string
+  default = "your_password"
 }
 ```
 ### Launch Instance with Terraform
