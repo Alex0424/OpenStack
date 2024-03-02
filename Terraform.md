@@ -24,7 +24,8 @@ terraform {
     }
   }
 }
-# Configure the openstack provider
+
+# Openstack provider
 provider "openstack" {
   user_name   = var.openstack_username
   tenant_name = var.openstack_project
@@ -32,16 +33,36 @@ provider "openstack" {
   auth_url    = var.openstack_auth_url
   insecure    = true
 }
-#Configure the compute instance
+# Compute instance
 resource "openstack_compute_instance_v2" "test-server" {
   name            = "instance_name"
   image_id        = "your_image_id"
   flavor_name     = "your_instance"
   key_pair        = "yur_pair_name"
-  security_groups = ["default"]
+  security_groups = [openstack_compute_secgroup_v2.secgroup_1.name]
 
   network {
     name = "your external network"
+  }
+}
+
+# Security Groups
+resource "openstack_compute_secgroup_v2" "secgroup_1" {
+  name        = "my_secgroup"
+  description = "my security group"
+
+  rule {
+    from_port   = 22
+    to_port     = 22
+    ip_protocol = "tcp"
+    cidr        = var.administrator_ip
+  }
+
+  rule {
+    from_port   = 80
+    to_port     = 80
+    ip_protocol = "tcp"
+    cidr        = "0.0.0.0/0"
   }
 }
 ```
@@ -51,27 +72,27 @@ vim variables.tf
 ```
 ```
 variable "administrator_ip" {
-  type = string
-  default = "0,0,0,0/0"
+  type    = string
+  default = "0.0.0.0/0"
 }
 
 variable "openstack_auth_url" {
-  type = string
+  type    = string
   default = "your_auth_url"
 }
 
 variable "openstack_project" {
-  type = string
+  type    = string
   default = "your_project_name"
 }
 
 variable "openstack_username" {
-  type = string
+  type    = string
   default = "your_username"
 }
 
 variable "openstack_user_password" {
-  type = string
+  type    = string
   default = "your_password"
 }
 ```
