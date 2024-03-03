@@ -129,3 +129,5 @@ updates configurations in the current directory for readability and consistency.
 https://opensource.com/article/23/1/terraform-manage-openstack-cluster
 
 https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs
+
+https://github.com/elastx/getting-started-elx-openstack/tree/master/01_Router_Networking
