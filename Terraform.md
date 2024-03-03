@@ -9,7 +9,7 @@ sudo mv terraform /usr/local/bin/
 ```
 ### Create Directory And Terraform File
 ```
-mkdir terraform-directory & cd terraform-directory
+mkdir terraform-directory && cd terraform-directory
 ```
 ### Create and configure main Terraform File
 ```
@@ -34,7 +34,7 @@ provider "openstack" {
   insecure    = true
 }
 # Compute instance
-resource "openstack_compute_instance_v2" "test-server" {
+resource "openstack_compute_instance_v2" "instance_name" {
   name            = "instance_name"
   image_id        = "your_image_id"
   flavor_name     = "your_instance"
@@ -102,3 +102,15 @@ terraform init
 terraform plan
 terraform apply
 ```
+### Smart and time saving commands
+`terraform fmt && terraform validate` updates configurations in the current directory for readability and consistency.
+### Good Tutorials
+
+https://opensource.com/article/23/1/terraform-manage-openstack-cluster
+
+
+
+### Documentation
+https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs
+
+
