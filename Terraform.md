@@ -20,6 +20,7 @@ openstack server list
 ### Download Terraform on linux terminal
 visit https://developer.hashicorp.com/terraform/install?product_intent=terraform#linux
 ```
+wget terraform_link
 unzip your_terraform_version.zip
 sudo chown root:root terraform
 sudo mv terraform /usr/local/bin/
