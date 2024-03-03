@@ -1,5 +1,22 @@
 # Create an Simple Instance With Terraform
 
+### recomended to have openstack client so you can work faster
+
+download "OpenStack RC File" from horizon API Access
+```
+source project_name-openrc.sh #enter you openstack password
+sudo apt install python3-openstackclient
+```
+### Usefull commands for this tutorial
+```
+openstack flavor list
+openstack image list
+openstack keypair list
+openstack network list
+openstack security group list
+openstack router list
+openstack server list
+```
 ### Download Terraform on linux terminal
 visit https://developer.hashicorp.com/terraform/install?product_intent=terraform#linux
 ```
@@ -103,14 +120,12 @@ terraform plan
 terraform apply
 ```
 ### Smart and time saving commands
-`terraform fmt && terraform validate` updates configurations in the current directory for readability and consistency.
-### Good Tutorials
+```
+terraform fmt && terraform validate
+```
+updates configurations in the current directory for readability and consistency.
+### Tutorials And Documentation
 
 https://opensource.com/article/23/1/terraform-manage-openstack-cluster
 
-
-
-### Documentation
 https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs
-
-
