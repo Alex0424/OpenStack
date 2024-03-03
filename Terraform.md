@@ -4,8 +4,8 @@
 
 download "OpenStack RC File" from horizon API Access
 ```
-source project_name-openrc.sh #enter you openstack password
 sudo apt install python3-openstackclient
+source project_name-openrc.sh #enter you openstack password
 ```
 ### Usefull commands for this tutorial
 ```
